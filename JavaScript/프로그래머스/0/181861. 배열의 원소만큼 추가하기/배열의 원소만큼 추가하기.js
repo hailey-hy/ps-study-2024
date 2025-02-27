@@ -1,0 +1,1 @@
+const solution = (arr) => arr.reduce((list, value) => [...list, ...Array(value).fill(value)], []);
