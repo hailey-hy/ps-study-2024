@@ -15,21 +15,15 @@ function solution(friends, gifts) {
     
     for (i = 0; i < friends.length; i++) {
         for (j = 0; j < friends.length; j++) {
-            if(i >= j) continue;
+            if(i === j) continue;
             if(matrix[i][j] === matrix[j][i]) { //선물 지수 비교
                 if(gift_index[i] > gift_index[j]) {
                     answer[i] += 1;
-                } else if (gift_index[i] < gift_index[j]) {
-                    answer[j] += 1;
-                }
-                console.log(`${friends[j]}가 ${friends[i]} 에게, ${answer}, i = ${i}, j = ${j} !` );
+                } 
             } else {
                 if(matrix[i][j] > matrix[j][i]) {
                     answer[i] += 1;
-                } else {
-                    answer[j] += 1;
                 }
-                console.log(`${friends[j]}가 ${friends[i]} 에게, ${answer}, i = ${i}, j = ${j}`);
             }
         }
     }
