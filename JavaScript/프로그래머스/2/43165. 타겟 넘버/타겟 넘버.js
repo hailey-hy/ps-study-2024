@@ -1,11 +1,11 @@
 function solution(numbers, target) {
-    let answer = 0
+    let answer = 0;
     function dfs(sum, index) {
         if(index === numbers.length) {
             if(sum === target) {
-                answer += 1
+                answer += 1;
             }
-            return;
+            return
         }
         
         dfs(sum + numbers[index], index + 1);
